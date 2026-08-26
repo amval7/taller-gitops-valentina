@@ -26,4 +26,31 @@ def calcular_estadisticas_notas(notas):
     3. Retornar el diccionario con las 6 claves calculadas.
     """
     # --- ESCRIBE TU CÓDIGO AQUÍ ---
-    pass
+    # Caso 1: Lista vacía
+    if not notas:
+        return {
+            "total": 0,
+            "promedio": 0.0,
+            "aprobados": 0,
+            "reprobados": 0,
+            "nota_maxima": 0.0,
+            "nota_minima": 0.0
+        }
+    
+    # Caso 2: Lista con notas
+    total = len(notas)                         # Cantidad de elementos
+    suma = sum(notas)                          # Suma de todas las notas
+    promedio = round(suma / total, 2)          # Promedio redondeado a 2 decimales
+    aprobados = sum(1 for nota in notas if nota >= 3.0)  # Notas >= 3.0
+    reprobados = total - aprobados             # Notas < 3.0
+    nota_maxima = max(notas)                   # Nota más alta
+    nota_minima = min(notas)                   # Nota más baja
+    
+    return {
+        "total": total,
+        "promedio": promedio,
+        "aprobados": aprobados,
+        "reprobados": reprobados,
+        "nota_maxima": nota_maxima,
+        "nota_minima": nota_minima
+    }
