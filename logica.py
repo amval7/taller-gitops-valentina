@@ -29,4 +29,5 @@ def calcular_estadisticas_notas(notas):
         "reprobados": reprobados,
         "nota_maxima": nota_maxima,
         "nota_minima": nota_minima
-    }
+
+        }
