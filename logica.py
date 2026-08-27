@@ -30,3 +30,4 @@ def calcular_estadisticas_notas(notas):
         "nota_maxima": nota_maxima,
         "nota_minima": nota_minima
 
+        }
